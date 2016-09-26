@@ -4,10 +4,14 @@ if v:progname =~? "evim"
   finish
 endif
 
+filetype off
 " Start Pathogen
 silent! call pathogen#infect()
 
 """ Key Mappings """
+
+" Remap leader character to comma
+let mapleader = ","
 
 " Set arrow keys to move between windows
 nno <Up> <C-W>k
@@ -21,21 +25,25 @@ ino <Down> <Esc><C-W>ja
 ino <Left> <Esc><C-W>ha
 ino <Right> <Esc><C-W>la
 
-" Disable normal arrow key functions in visual mode
-vno <Up> <Nop>
-vno <Down> <Nop>
-vno <Left> <Nop>
-vno <Right> <Nop>
-
 " Shortcut to rapidly toggle 'set list'
 nmap <leader>l :set list!<CR>
 
 " Leader commands for quick snippets
-imap <leader>' ''<ESC>i
-imap <leader>" ""<ESC>i
-imap <leader>( ()<ESC>i
-imap <leader>{ {}<ESC>i
-imap <leader>[ {}<ESC>i
+inoremap <leader>' ''<ESC>i
+inoremap <leader>" ""<ESC>i
+inoremap <leader>( ()<ESC>i
+inoremap <leader>{ {}<ESC>i
+inoremap <leader>[ {}<ESC>i
+
+" Clear search highlighting
+nnoremap <leader><space> :noh<cr>
+
+" Quick upper- and lowercase word conversion
+nnoremap <leader>U gUiw
+nnoremap <leader>u guiw
+
+" A bit faster to exit insert mode
+inoremap jj <ESC>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -61,27 +69,47 @@ nno gO O<ESC>j
 " nmap <c-u> <c-u>j
 " nmap <c-d> <c-d>k
 
+" Just put the stupid things in there for me
+nnoremap / /\v
+vnoremap / /\v
+
+" Make tabs move between matchign braces
+nnoremap <tab> %
+vnoremap <tab> %
+
+" NERDTree toggle mapping
+noremap <leader>n :NERDTreeToggle<CR>
+
 """ Settings """
 
-set encoding=utf-8   " Set the encoding to UTF-8
-set laststatus=2     " Set the status line to have 2 rows
-set nocompatible     " Don't enable Vi compatibility
-set backspace=       " Don't allow backspacing over older stuff
-set noshowmode       " Hide the mode from the default status bar
-set nobackup		   " do not keep a backup file, use versions instead
-set history=50		   " Keep 50 lines of command line history
-set ruler			   " Show the cursor position all the time
-set showcmd			   " Display incomplete commands
-set incsearch		   " Do incremental searching
-set tabstop=3		   " Set the tab stop to 4 spaces
-set softtabstop=3	   " Soft tab stop
-set shiftwidth=3	   " Set the shift width to 4 spaces
-set expandtab		   " Turn tabs into spaces.
-set number			   " Always enable line numbers
-set ai				   " Turn on auto indent
-set nowrap           " Disable line wrapping
-set mousehide		   " Hide the mouse when typing text
-set ch=1             " Set command height
+set encoding=utf-8               " Set the encoding to UTF-8
+set laststatus=2                 " Set the status line to have 2 rows
+set nocompatible                 " Don't enable Vi compatibility
+set scrolloff=3                  " Always keep three lines below the cursor when scrolling
+set backspace=indent,eol,start   " Backspace over everything
+set noshowmode                   " Hide the mode from the default status bar
+set nobackup                     " do not keep a backup file, use versions instead
+set history=50                   " Keep 50 lines of command line history
+set ruler                        " Show the cursor position all the time
+set showcmd                      " Display incomplete commands
+set tabstop=4                    " Set the tab stop to 4 spaces
+set softtabstop=4                " Soft tab stop
+set shiftwidth=4                 " Set the shift width to 4 spaces
+set expandtab                    " Turn tabs into spaces.
+set number                       " Always enable line numbers
+set autoindent                   " Turn on auto indent
+set cursorline                   " Highlight the line the cursor is on
+set nowrap                       " Disable line wrapping
+set mousehide                    " Hide the mouse when typing text
+set ttyfast                      " Fast terminal refreshing
+set ch=1                         " Set command height
+set wildmenu                     " Enable command line listing
+set wildmode=list:longest        " See :help for details
+set ignorecase                   " Case-insensitive searching
+set smartcase                    " Case-sensitive searching when using upper case
+set incsearch                    " Do incremental searching
+set hlsearch                     " Highlight search results
+set gdefault                     " Default to using 'global' substitution
 
 " Set hidden characters
 set listchars=tab:▸\ ,eol:¬
@@ -108,22 +136,15 @@ if has("gui_running")
 endif
 
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+""" Syntax Highlighting """
+
+syntax on
 
 " Set the screen solors
 hi clear
 set background=dark
 
-if exists("syntax_on")
-  syntax reset
-endif
-
-""" Syntax Highlighting """
+syntax reset
 
 hi Normal            gui=none guifg=#dcdcdc guibg=#1e1e1e
 hi SpecialKey        gui=none guifg=#cc0000
@@ -176,36 +197,26 @@ if !exists(":DiffOrig")
       \ | wincmd p | diffthis
 endif
 
-command! -nargs=* -complete=shellcmd R vnew | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+" command! -nargs=* -complete=shellcmd R vnew | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " Autocmd stuff
 if has('autocmd')
    " autocmd BufReadPre * :set columns=(80+numberwidth)
-   " autocmd BufReadPre *.py :call SetupForPython()
    autocmd BufReadPre *.c,*.cpp,*.cxx,*.h,*.hpp,*.hxx,*.php,*.cs :set cindent
    autocmd BufWritePre *.py,*.js,*.c,*.cpp,*.cxx,*.h,*.hpp,*.html,*.php,*.css,*.txt :call StripTrailingWhitespace()
 endif
 
 """ Functions """
 
-" Sets specific indent options for working with python files
-" (These are specific to what is used in my workplace)
-func! SetupForPython()
-   set tabstop=4
-   set softtabstop=4
-   set shiftwidth=4
-   set expandtab
-endfunction
-
 " Strips trailing whitespaces without changing the current
 " search string (because I hate trailing whitespace)
 func! StripTrailingWhitespace()
-	let _s = @/
-	let l = line(".")
-	let c = col(".")
-	%s/\s\+$//e
-	let @/ = _s
-	call cursor(l, c)
+    let _s = @/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/ = _s
+    call cursor(l, c)
 endfunction
 
 """ Plugin Options """
@@ -215,8 +226,8 @@ let g:airline_powerline_symbols = 0  " Don't use PowerLine symbols
 let g:airline_left_sep = ''          " Make left separator blank
 let g:airline_right_sep = ''         " Make right separator blank
 
-" NERDTree
-noremap <leader>n :NERDTreeToggle<CR>
+" GitGutter
+let g:gitgutter_enabled = 0          " Disable GitGUtter
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1             " Add space ofter comment char
