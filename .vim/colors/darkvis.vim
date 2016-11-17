@@ -21,7 +21,7 @@ hi Title             gui=bold	guifg=Magenta
 hi Visual            gui=none guifg=#1e1e1e guibg=#3399ff
 hi WarningMsg        gui=none guifg=Red
 hi Cursor            guifg=bg	guibg=fg
-hi CursorLine        gui=none guibg=#0f0f0f
+hi CursorLine        gui=none guibg=#0f0f0f ctermfg=fg ctermbg=bg
 
 hi Comment           guifg=#80a0ff
 
