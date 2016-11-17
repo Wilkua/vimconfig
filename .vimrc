@@ -80,6 +80,14 @@ vnoremap <tab> %
 " NERDTree toggle mapping
 noremap <leader>n :NERDTreeToggle<CR>
 
+" Easy clipboard management
+nnoremap <leader>p "*p
+nnoremap <leader>y "*y
+
+" Faster screen movement
+nnoremap <C-E> 3<C-E>
+nnoremap <C-Y> 3<C-Y>
+
 """ Settings """
 
 set encoding=utf-8               " Set the encoding to UTF-8
