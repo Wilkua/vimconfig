@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 let g:colors_name = "DarkVis"
 
-hi Normal            gui=none guifg=#dcdcdc guibg=#1e1e1e
+hi Normal            gui=none guifg=#dcdcdc guibg=#1e1e1e ctermfg=white ctermbg=black
 hi SpecialKey        gui=none guifg=#cc0000
 hi NonText           gui=none guifg=#aaaaaa
 hi Directory         gui=none guifg=#cc8000
