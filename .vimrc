@@ -185,6 +185,12 @@ let g:airline_powerline_symbols = 0  " Don't use PowerLine symbols
 let g:airline_left_sep = ''          " Make left separator blank
 let g:airline_right_sep = ''         " Make right separator blank
 
+" CtrlP
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.(git|hg|svn))|(node_modules)$',
+  \ 'file': '\v\.(exe|so|dll|swp)',
+  \ }
+
 " GitGutter
 let g:gitgutter_enabled = 0          " Disable GitGUtter
 
