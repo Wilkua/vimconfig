@@ -5,6 +5,7 @@ if v:progname =~? "evim"
 endif
 
 filetype off
+
 " Start Pathogen
 silent! call pathogen#infect()
 
@@ -80,9 +81,8 @@ vnoremap <tab> %
 " NERDTree toggle mapping
 noremap <leader>n :NERDTreeToggle<CR>
 
-" Easy clipboard management
-nnoremap <leader>p "*p
-nnoremap <leader>y "*y
+" CtrlP functionality
+nnoremap <leader>p :CtrlP<CR>
 
 " Faster screen movement
 nnoremap <C-E> 3<C-E>
@@ -162,13 +162,15 @@ endif
 if has('autocmd')
    " autocmd BufReadPre * :set columns=(80+numberwidth)
    autocmd BufReadPre *.c,*.cpp,*.cxx,*.h,*.hpp,*.hxx,*.php,*.cs :set cindent
-   autocmd BufWritePre *.py,*.js,*.c,*.cpp,*.cxx,*.h,*.hpp,*.html,*.php,*.css,*.txt :call StripTrailingWhitespace()
+   " autocmd BufWritePre *.py,*.js,*.c,*.cpp,*.cxx,*.h,*.hpp,*.html,*.php,*.css,*.txt :call StripTrailingWhitespace()
 endif
 
 """ Functions """
 
 " Strips trailing whitespaces without changing the current
 " search string (because I hate trailing whitespace)
+" NOTE(wilkua): This function is a bit iffy at best. Use an .editorconfig file
+" with the editorconfig plugin instead for better results.
 func! StripTrailingWhitespace()
     let _s = @/
     let l = line(".")
