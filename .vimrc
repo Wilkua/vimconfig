@@ -8,33 +8,40 @@ filetype off
 
 " Start Pathogen
 silent! call pathogen#infect()
+Helptags
 
-""" Key Mappings """
+" Key Mappings
 
 " Remap leader character to comma
-let mapleader = ","
+let mapleader = ','
 
 " Set arrow keys to move between windows
-nno <Up> <C-W>k
-nno <Down> <C-W>j
-nno <Left> <C-W>h
-nno <Right> <C-W>l
+nno <up> <c-w>k
+nno <down> <c-w>j
+nno <left> <c-w>h
+nno <right> <c-w>l
+
+" Use shift + arrow keys to move windows around
+nno <s-up> <c-w><s-k>
+nno <s-down> <c-w><s-j>
+nno <s-left> <c-w><s-h>
+nno <s-right> <c-w><s-l>
 
 " Cancel insert, move windows, start insert
-ino <Up> <Esc><C-W>ka
-ino <Down> <Esc><C-W>ja
-ino <Left> <Esc><C-W>ha
-ino <Right> <Esc><C-W>la
+ino <up> <esc><c-w>ka
+ino <down> <esc><c-w>ja
+ino <left> <esc><c-w>ha
+ino <right> <esc><c-w>la
 
 " Shortcut to rapidly toggle 'set list'
 nmap <leader>l :set list!<CR>
 
 " Leader commands for quick snippets
-inoremap <leader>' ''<ESC>i
-inoremap <leader>" ""<ESC>i
-inoremap <leader>( ()<ESC>i
-inoremap <leader>{ {}<ESC>i
-inoremap <leader>[ {}<ESC>i
+inoremap <leader>' ''<esc>i
+inoremap <leader>" ""<esc>i
+inoremap <leader>( ()<esc>i
+inoremap <leader>{ {}<esc>i
+inoremap <leader>[ {}<esc>i
 
 " Clear search highlighting
 nnoremap <leader><space> :noh<cr>
@@ -44,25 +51,25 @@ nnoremap <leader>U gUiw
 nnoremap <leader>u guiw
 
 " A bit faster to exit insert mode
-inoremap jj <ESC>
+inoremap jj <esc>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+inoremap <c-u> <c-g>u<c-U>
 
 " Create a newline below the current line but don't
 " place me in insert mode
-nno g<C-O> o<ESC>k
+nno g<c-o> o<esc>k
 
 " Create a newline above the current line but don't
 " place me in insert mode
-nno gO O<ESC>j
+nno gO O<esc>j
 
 " Set F5 to run a build routine
-" noremap <F5> :call DoBuild()<CR>
+" noremap <f5> :call DoBuild()<CR>
 
 " Don't change the cursor position when moving screens
 " nmap <c-e> <c-e>j
@@ -81,12 +88,9 @@ vnoremap <tab> %
 " NERDTree toggle mapping
 noremap <leader>n :NERDTreeToggle<CR>
 
-" CtrlP functionality
-nnoremap <leader>p :CtrlP<CR>
-
 " Faster screen movement
-nnoremap <C-E> 3<C-E>
-nnoremap <C-Y> 3<C-Y>
+nnoremap <c-e> 3<c-e>
+nnoremap <c-y> 3<c-y>
 
 """ Settings """
 
@@ -188,6 +192,7 @@ let g:airline_left_sep = ''          " Make left separator blank
 let g:airline_right_sep = ''         " Make right separator blank
 
 " CtrlP
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/](\.(git|hg|svn))|(node_modules)$',
   \ 'file': '\v\.(exe|so|dll|swp)',
