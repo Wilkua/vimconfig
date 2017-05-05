@@ -194,7 +194,7 @@ let g:airline_right_sep = ''         " Make right separator blank
 " CtrlP
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.(git|hg|svn))|(node_modules)$',
+  \ 'dir': '\v[\/](\.(git|hg|svn))|(node_modules)|(coverage)$',
   \ 'file': '\v\.(exe|so|dll|swp)',
   \ }
 
