@@ -77,11 +77,17 @@ nno gO O<esc>j
 " nmap <c-u> <c-u>j
 " nmap <c-d> <c-d>k
 
+" Center the line moved to with G
+nno G Gzz
+
+" Center the found search item
+nno n nzz
+
 " Just put the stupid things in there for me
 nnoremap / /\v
 vnoremap / /\v
 
-" Make tabs move between matchign braces
+" Make tabs move between matching braces
 nnoremap <tab> %
 vnoremap <tab> %
 
