@@ -129,6 +129,7 @@ set smartcase                    " Case-sensitive searching when using upper cas
 set incsearch                    " Do incremental searching
 set hlsearch                     " Highlight search results
 set gdefault                     " Default to using 'global' substitution
+set virtualedit=block            " Block selections are always rectangular
 
 " Set hidden characters
 let &listchars = "tab:\u25B8 ,trail:\uB7,eol:\uAC"
