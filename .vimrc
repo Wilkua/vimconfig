@@ -178,6 +178,9 @@ endif
 
 """ Functions """
 
+" Highlight when a line goes over 80 columns
+call matchadd('ColorColumn', '\%81v', 100)
+
 " Strips trailing whitespaces without changing the current
 " search string (because I hate trailing whitespace)
 " NOTE(wilkua): This function is a bit iffy at best. Use an .editorconfig file
