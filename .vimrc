@@ -115,6 +115,7 @@ set softtabstop=4                " Soft tab stop
 set shiftwidth=4                 " Set the shift width to 4 spaces
 set expandtab                    " Turn tabs into spaces.
 set number                       " Always enable line numbers
+set relativenumber               " Enable relative line numbers
 set autoindent                   " Turn on auto indent
 set cursorline                   " Highlight the line the cursor is on
 set nowrap                       " Disable line wrapping
