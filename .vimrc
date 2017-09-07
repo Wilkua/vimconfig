@@ -131,7 +131,7 @@ set hlsearch                     " Highlight search results
 set gdefault                     " Default to using 'global' substitution
 
 " Set hidden characters
-set listchars=tab:▸\ ,eol:¬
+let &listchars = "tab:\u25B8 ,trail:\uB7,eol:\uAC"
 
 " Enable filetype and plugin indent detection
 filetype plugin indent on
