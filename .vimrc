@@ -41,7 +41,7 @@ inoremap <leader>' ''<esc>i
 inoremap <leader>" ""<esc>i
 inoremap <leader>( ()<esc>i
 inoremap <leader>{ {}<esc>i
-inoremap <leader>[ {}<esc>i
+inoremap <leader>[ []<esc>i
 
 " Clear search highlighting
 nnoremap <leader><space> :noh<cr>
