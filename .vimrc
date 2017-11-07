@@ -235,3 +235,11 @@ let g:NERDDefaultAlign = 'left'       " Left align comment marks
 let g:NERDCommentEmptyLines = 1       " Comment blank lines
 let g:NERDTrimTrailingWhitespace = 1  " Trim whitespace on uncomment
 
+" YankRing
+" Don't limit the amount of data stored in each yankring entry
+let g:yankring_max_element_length = 0
+let g:yankring_persist = 0  " Don't persist YankRing data
+
+" JSON Syntax
+let g:vim_json_syntax_conceal = 0  " Don't hide quotes in JSON files
+
