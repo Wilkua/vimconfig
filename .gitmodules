@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/tsuquyomi"]
 	path = .vim/bundle/tsuquyomi
 	url = https://github.com/quramy/tsuquyomi.git
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/valloric/youcompleteme.git
