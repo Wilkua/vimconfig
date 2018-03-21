@@ -221,7 +221,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " GitGutter
-let g:gitgutter_enabled = 0          " Disable GitGUtter
+let g:gitgutter_map_keys = 0          " Disable GitGutter shortcut keys
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1             " Add space ofter comment char
