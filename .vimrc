@@ -101,12 +101,6 @@ noremap <leader>n :NERDTreeToggle<CR>
 nnoremap <c-e> 3<c-e>
 nnoremap <c-y> 3<c-y>
 
-" Flip semicolon (;) and colon (:)
-nnoremap : ;
-nnoremap ; :
-vnoremap : ;
-vnoremap ; :
-
 """ Settings """
 
 set encoding=utf-8               " Set the encoding to UTF-8
