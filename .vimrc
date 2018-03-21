@@ -237,3 +237,5 @@ let g:yankring_persist = 0  " Don't persist YankRing data
 " JSON Syntax
 let g:vim_json_syntax_conceal = 0  " Don't hide quotes in JSON files
 
+" EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
