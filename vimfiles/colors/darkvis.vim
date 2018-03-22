@@ -23,16 +23,16 @@ hi WarningMsg        gui=none guifg=Red
 hi Cursor            guifg=bg	guibg=fg
 hi CursorLine        gui=none guibg=#0f0f0f ctermfg=fg ctermbg=bg
 
-hi Comment           guifg=#80a0ff
+hi Comment           guifg=#608b4e
 
 hi Constant          guifg=#b5cea8
-hi String            gui=none guifg=#d89d65
+hi String            gui=none guifg=#ce9178
 hi link String       Character
 
 hi Identifier        gui=none guifg=#dcdcdc
 
 hi Statement         gui=none guifg=#569cd6
-hi Operator          gui=none guifg=#b4b4b4
+hi Operator          gui=none guifg=#d4d4d4
 
 hi PreProc           gui=none guifg=#9b9b9b
 
