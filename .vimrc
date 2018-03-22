@@ -143,9 +143,9 @@ filetype plugin indent on
 " Put all the undo files in a single direcotry. This could have some major
 " consequences, but I like a tidy working directory.
 if has('persistent_undo')
-    set undodir=$HOME/.vim_undo
-    set undolevels=2000
     set undofile
+    set undodir="$HOME/.vim_undo"
+    set undolevels=2000
 endif
 
 " In many terminal emulators the mouse works just fine, thus enable it.
