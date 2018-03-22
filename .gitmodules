@@ -1,48 +1,48 @@
 [submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+	path = vimfiles/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+	path = vimfiles/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/editorconfig-vim"]
-	path = .vim/bundle/editorconfig-vim
+	path = vimfiles/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
+	path = vimfiles/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule ".vim/bundle/typescript-vim"]
-	path = .vim/bundle/typescript-vim
+	path = vimfiles/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
+	path = vimfiles/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".vim/bundle/vim-json"]
-	path = .vim/bundle/vim-json
+	path = vimfiles/bundle/vim-json
 	url = https://github.com/elzr/vim-json.git
 [submodule ".vim/bundle/yajs.vim"]
-	path = .vim/bundle/yajs.vim
+	path = vimfiles/bundle/yajs.vim
 	url = https://github.com/othree/yajs.vim.git
 [submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+	path = vimfiles/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
+	path = vimfiles/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/vim-repeat"]
-	path = .vim/bundle/vim-repeat
+	path = vimfiles/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
 [submodule ".vim/bundle/vim-jdaddy"]
-	path = .vim/bundle/vim-jdaddy
+	path = vimfiles/bundle/vim-jdaddy
 	url = https://github.com/tpope/vim-jdaddy.git
 [submodule ".vim/bundle/YankRing.vim"]
-	path = .vim/bundle/YankRing.vim
+	path = vimfiles/bundle/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
+	path = vimfiles/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule ".vim/bundle/tsuquyomi"]
-	path = .vim/bundle/tsuquyomi
+	path = vimfiles/bundle/tsuquyomi
 	url = https://github.com/quramy/tsuquyomi.git
 [submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
+	path = vimfiles/bundle/YouCompleteMe
 	url = https://github.com/valloric/youcompleteme.git
