@@ -133,6 +133,7 @@ set incsearch                    " Do incremental searching
 set hlsearch                     " Highlight search results
 set gdefault                     " Default to using 'global' substitution
 set virtualedit=block            " Block selections are always rectangular
+set completeopt-=preview         " Don't show the preview window. It's annoying
 
 " Set hidden characters
 let &listchars = "tab:\u25B8 ,trail:\uB7,eol:\uAC"
@@ -239,3 +240,9 @@ let g:vim_json_syntax_conceal = 0  " Don't hide quotes in JSON files
 
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_list_select_completion = ['<tab>', '<c-n>', '<down>']
+let g:ycm_key_list_previous_completion = ['<s-tab>', '<c-p>', '<up>']
