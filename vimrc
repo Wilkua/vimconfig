@@ -246,3 +246,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_list_select_completion = ['<tab>', '<c-n>', '<down>']
 let g:ycm_key_list_previous_completion = ['<s-tab>', '<c-p>', '<up>']
+
+" Emmet
+let g:user_emmet_leader_key = '<leader>'

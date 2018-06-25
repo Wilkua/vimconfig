@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/YouCompleteMe"]
 	path = vimfiles/bundle/YouCompleteMe
 	url = https://github.com/valloric/youcompleteme.git
+[submodule "vimfiles/bundle/emmet-vim"]
+	path = vimfiles/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
