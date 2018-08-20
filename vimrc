@@ -156,7 +156,7 @@ endif
 
 " Set some GUI options
 if has("gui_running")
-   set guifont=Consolas:h9:cANSI
+   set guifont=Consolas,Courier_New,momospace:h13:cDEFAULT
    set guioptions-=t    " Get rid of tear-off menus
    set guioptions-=m    " Remove the menu bar
    set guioptions-=T    " Remove the tool bar
