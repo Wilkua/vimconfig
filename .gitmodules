@@ -49,3 +49,6 @@
 [submodule "vimfiles/bundle/emmet-vim"]
 	path = vimfiles/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vimfiles/bundle/dart-vim-plugin"]
+	path = vimfiles/bundle/dart-vim-plugin
+	url = https://github.com/dart-lang/dart-vim-plugin.git
