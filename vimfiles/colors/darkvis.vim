@@ -15,8 +15,8 @@ hi MoreMsg           gui=bold guifg=SeaGreen
 hi ModeMsg           gui=bold guifg=#dcdcdc guibg=#1e1e1e
 hi LineNr            gui=none guifg=#2b91af
 hi Question          gui=none guifg=#dcdcdc
-hi StatusLine        gui=bold,underline guifg=#dcdcdc guibg=#1e1e1e
-hi StatusLineNC      gui=underline guifg=#dcdcdc guibg=#1e1e1e
+hi StatusLine        gui=none guifg=#dcdcdc guibg=#2e2e2e
+hi StatusLineNC      gui=none guifg=#767676 guibg=#2e2e2e
 hi Title             gui=bold guifg=Magenta
 hi Visual            gui=none guifg=#1e1e1e guibg=#3399ff
 hi WarningMsg        gui=none guifg=Red

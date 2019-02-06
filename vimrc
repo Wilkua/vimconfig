@@ -1,4 +1,3 @@
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -135,6 +134,14 @@ set gdefault                     " Default to using 'global' substitution
 set virtualedit=block            " Block selections are always rectangular
 set completeopt-=preview         " Don't show the preview window. It's annoying
 
+" Custom statusline setup
+set statusline=
+set statusline+=%(\ %{mode()}\ %)
+set statusline+=%.24F%(\ [%M%R%H]%)
+set statusline+=%=
+set statusline+=%y
+set statusline+=%(\ %c\ %)
+
 " Set hidden characters
 let &listchars = "tab:\u25B8 ,trail:\uB7,eol:\uAC"
 
@@ -208,11 +215,6 @@ func! StripTrailingWhitespace()
 endfunction
 
 """ Plugin Options """
-
-" Airline
-let g:airline_powerline_symbols = 0  " Don't use PowerLine symbols
-let g:airline_left_sep = ''          " Make left separator blank
-let g:airline_right_sep = ''         " Make right separator blank
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'
