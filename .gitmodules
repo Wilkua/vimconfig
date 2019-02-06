@@ -40,9 +40,9 @@
 [submodule ".vim/bundle/tsuquyomi"]
 	path = vimfiles/bundle/tsuquyomi
 	url = https://github.com/quramy/tsuquyomi.git
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = vimfiles/bundle/YouCompleteMe
-	url = https://github.com/valloric/youcompleteme.git
 [submodule "vimfiles/bundle/emmet-vim"]
 	path = vimfiles/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vimfiles/bundle/dart-vim-plugin"]
+	path = vimfiles/bundle/dart-vim-plugin
+	url = https://github.com/dart-lang/dart-vim-plugin.git
