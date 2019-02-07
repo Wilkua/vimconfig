@@ -52,9 +52,6 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>U gUiw
 nnoremap <leader>u guiw
 
-" A bit faster to exit insert mode
-inoremap jj <esc>
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -70,15 +67,6 @@ nno g<c-o> o<esc>k
 " place me in insert mode
 nno gO O<esc>j
 
-" Set F5 to run a build routine
-" noremap <f5> :call DoBuild()<CR>
-
-" Don't change the cursor position when moving screens
-" nmap <c-e> <c-e>j
-" nmap <c-y> <c-y>k
-" nmap <c-u> <c-u>j
-" nmap <c-d> <c-d>k
-
 " Center the line moved to with G
 nno G Gzz
 
@@ -88,10 +76,6 @@ nno n nzz
 " Just put the stupid things in there for me
 nnoremap / /\v
 vnoremap / /\v
-
-" Make tabs move between matching braces
-nnoremap <tab> %
-vnoremap <tab> %
 
 " NERDTree toggle mapping
 noremap <leader>n :NERDTreeToggle<CR>
@@ -137,10 +121,11 @@ set completeopt-=preview         " Don't show the preview window. It's annoying
 " Custom statusline setup
 set statusline=
 set statusline+=%(\ %{mode()}\ %)
-set statusline+=%.24F%(\ [%M%R%H]%)
+set statusline+=%.60F%(\ [%M%R%H]%)
 set statusline+=%=
-set statusline+=%y
-set statusline+=%(\ %c\ %)
+set statusline+=%y\ %{strlen(&fenc)?&fenc:&enc}
+set statusline+=%{strlen(&ff)?'['.&ff.']':''}
+set statusline+=%(\ %c\ %P\ %)
 
 " Set hidden characters
 let &listchars = "tab:\u25B8 ,trail:\uB7,eol:\uAC"
