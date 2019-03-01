@@ -9,8 +9,8 @@ hi Normal            gui=none guifg=#d4d4d4 guibg=#1e1e1e ctermfg=white ctermbg=
 hi SpecialKey        gui=none guifg=#cc0000
 hi NonText           gui=none guifg=#aaaaaa
 hi Directory         gui=none guifg=#cc8000
-hi ErrorMsg          gui=none guifg=White guibg=Red
-hi Search            gui=none guifg=white guibg=Red
+hi ErrorMsg          gui=none guifg=#d85050 guibg=#1e1e1e
+hi Search            gui=none guibg=#773800
 hi MoreMsg           gui=bold guifg=SeaGreen
 hi ModeMsg           gui=bold guifg=#dcdcdc guibg=#1e1e1e
 hi LineNr            gui=none guifg=#2b91af
@@ -38,7 +38,7 @@ hi Type              gui=none guifg=#4ec980
 
 hi Error             gui=none guifg=#d85050 guibg=#1e1e1e
 hi Todo              gui=none guifg=blue guibg=yellow
-hi MatchParen        gui=none guifg=#1e1e1e guibg=#dcdcdc
+hi MatchParen        gui=none guifg=#dcdcdc guibg=#0d4583
 hi TabLine           gui=none gui=bold guifg=blue guibg=white
 hi TabLineFill       gui=bold guifg=blue guibg=white
 hi TabLineSel        gui=none guifg=white guibg=blue
