@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 let g:colors_name = "DarkVis"
 
-hi Normal            gui=none guifg=#d4d4d4 guibg=#1e1e1e ctermfg=white ctermbg=black
+hi Normal            gui=none guifg=#d4d4d4 guibg=#1e1e1e
 hi SpecialKey        gui=none guifg=#cc0000
 hi NonText           gui=none guifg=#aaaaaa
 hi Directory         gui=none guifg=#cc8000
@@ -21,7 +21,7 @@ hi Title             gui=bold guifg=Magenta
 hi Visual            gui=none guifg=#1e1e1e guibg=#3399ff
 hi WarningMsg        gui=none guifg=Red
 hi Cursor            guifg=bg guibg=fg
-hi CursorLine        gui=none guibg=#0f0f0f ctermfg=fg ctermbg=bg
+hi CursorLine        gui=none guibg=#0f0f0f
 
 hi Character         gui=none guifg=#ce9178
 hi Comment           gui=none guifg=#608b4e
@@ -53,3 +53,10 @@ hi PmenuThumb        gui=none guifg=orange guibg=black
 hi DiffAdd           gui=none
 hi DiffChange        gui=none
 hi DiffDelete        gui=none
+
+" CTerm Colors
+hi Normal            cterm=none ctermfg=white ctermbg=black
+hi CursorLine        cterm=underline ctermfg=fg ctermbg=bg
+hi StatusLine        cterm=bold ctermfg=white ctermbg=black
+hi StatusLineNC      cterm=none ctermfg=white ctermbg=black
+
