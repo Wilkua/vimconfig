@@ -1,14 +1,3 @@
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-filetype off
-
-" Start Pathogen
-silent! call pathogen#infect()
-Helptags
-
 " Key Mappings
 
 " Remap leader character to comma
@@ -34,16 +23,6 @@ ino <right> <esc><c-w>la
 
 " Shortcut to rapidly toggle 'set list'
 nmap <leader>l :set list!<CR>
-
-" Leader commands for quick snippets
-inoremap <leader>' ''<esc>i
-inoremap <leader>" ""<esc>i
-inoremap <leader>( (  )<esc>hi
-inoremap <leader>) ()<esc>i
-inoremap <leader>{ {  }<esc>hi
-inoremap <leader>} {}<esc>i
-inoremap <leader>[ [  ]<esc>hi
-inoremap <leader>] []<esc>i
 
 " Clear search highlighting
 nnoremap <leader><space> :noh<cr>
@@ -117,51 +96,34 @@ set hlsearch                     " Highlight search results
 set gdefault                     " Default to using 'global' substitution
 set virtualedit=block            " Block selections are always rectangular
 set completeopt-=preview         " Don't show the preview window. It's annoying
+set path+=**                     " Include working direcotry in search path
+
+if has('gui_running')
+    set guioptions=
+    set guifont=Courier_New:h16:cDEFAULT
+    set lines=45
+    set columns=140
+endif
 
 " Custom statusline setup
 set statusline=
 set statusline+=%(\ %{mode()}\ %)
-set statusline+=%.60F%(\ [%M%R%H]%)
+set statusline+=%<%.60f%(\ [%M%R%H]%)
 set statusline+=%=
 set statusline+=%y\ %{strlen(&fenc)?&fenc:&enc}
 set statusline+=%{strlen(&ff)?'['.&ff.']':''}
 set statusline+=%(\ %c\ %P\ %)
 
+set autoread
+au CursorHold * checktime
+
 " Set hidden characters
 let &listchars = "tab:\u25B8 ,trail:\uB7,eol:\uAC"
-
-" Enable filetype and plugin indent detection
-filetype plugin indent on
-
-" Put all the undo files in a single direcotry. This could have some major
-" consequences, but I like a tidy working directory.
-if has('persistent_undo')
-    set undofile
-    set undodir="$HOME/.vim_undo"
-    set undolevels=2000
-endif
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" Set some GUI options
-if has("gui_running")
-   set guifont=Consolas,Courier_New,momospace:h13:cDEFAULT
-   set guioptions-=t    " Get rid of tear-off menus
-   set guioptions-=m    " Remove the menu bar
-   set guioptions-=T    " Remove the tool bar
-   set guioptions-=r    " Get rid of the right scrollbar
-   set guioptions-=L    " Get rid of the left scrollbar
-   set numberwidth=6    " Set line number gutter width
-   set lines=34         " Set the height of the window to 27 lines
-   set columns=120      " Set the width of the window to 80 columsn
-endif
 
 """ Syntax Highlighting """
 
 syntax on
+set background=dark
 colorscheme darkvis
 
 " Convenient command to see the difference between the current buffer and the
@@ -201,13 +163,6 @@ endfunction
 
 """ Plugin Options """
 
-" CtrlP
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.(git|hg|svn))|(node_modules)|(coverage)$',
-  \ 'file': '\v\.(exe|so|dll|swp)',
-  \ }
-
 " GitGutter
 let g:gitgutter_map_keys = 0          " Disable GitGutter shortcut keys
 
@@ -217,22 +172,11 @@ let g:NERDDefaultAlign = 'left'       " Left align comment marks
 let g:NERDCommentEmptyLines = 1       " Comment blank lines
 let g:NERDTrimTrailingWhitespace = 1  " Trim whitespace on uncomment
 
-" YankRing
-" Don't limit the amount of data stored in each yankring entry
-let g:yankring_max_element_length = 0
-let g:yankring_persist = 0  " Don't persist YankRing data
-
 " JSON Syntax
 let g:vim_json_syntax_conceal = 0  " Don't hide quotes in JSON files
 
 " EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_list_select_completion = ['<tab>', '<c-n>', '<down>']
-let g:ycm_key_list_previous_completion = ['<s-tab>', '<c-p>', '<up>']
 
 " Emmet
 let g:user_emmet_leader_key = '<leader>'
